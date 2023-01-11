@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script>
+        const dateForm = document.getElementById("date");
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = ("0" + date.getMonth()+1).slice(-2);
+        const day = ("0" + date.getDate()).slice(-2);
+
+        dateForm.value = `${year}-${month}-${day}`;
+    </script>
+    <title>TO-DO CRUD</title>
+</head>
+<body class="bg-dark">
+    <header class="position-relative">
+        <div class="container p-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 py-3">
+                <a href="/" class="d-flex align-items-center col-12 text-white text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-chat-square-quote-fill me-2" viewBox="0 0 16 16">
+                        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm7.194 2.766a1.688 1.688 0 0 0-.227-.272 1.467 1.467 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 5.734 4C4.776 4 4 4.746 4 5.667c0 .92.776 1.666 1.734 1.666.343 0 .662-.095.931-.26-.137.389-.39.804-.81 1.22a.405.405 0 0 0 .011.59c.173.16.447.155.614-.01 1.334-1.329 1.37-2.758.941-3.706a2.461 2.461 0 0 0-.227-.4zM11 7.073c-.136.389-.39.804-.81 1.22a.405.405 0 0 0 .012.59c.172.16.446.155.613-.01 1.334-1.329 1.37-2.758.942-3.706a2.466 2.466 0 0 0-.228-.4 1.686 1.686 0 0 0-.227-.273 1.466 1.466 0 0 0-.469-.324l-.008-.004A1.785 1.785 0 0 0 10.07 4c-.957 0-1.734.746-1.734 1.667 0 .92.777 1.666 1.734 1.666.343 0 .662-.095.931-.26z"/>
+                    </svg>
+                    <h4 class="mb-0"><strong>TO-DO CRUD</strong></h4>
+                </a>
+                <ul class="nav gap-3 me-sm-auto mb-md-0">
+                    <li><a href="/list" class="nav-link px-0 text-white"><i class="bi bi-list me-2"></i>list</a></li>
+                    <li><a href="/write" class="nav-link px-0 text-white"><i class="bi bi-pencil-square me-2"></i>write</a></li>
+                </ul>
+                <div class="text-end">
+                    <a class="btn btn-outline-light me-2" href="/login"><i class="bi bi-box-arrow-in-right me-2"></i>login</a>
+                    <a class="btn btn-warning" href="/mypage"><i class="bi bi-person me-2"></i>mypage</a>
+                </div>
+            </div>
+            <hr data-content="AND" class="hr-text text-white">
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container px-4">
+                <div class="d-flex align-items-center flex-wrap flex-md-nowrap mb-5">
+                    <div class="col-12 col-sm-8">
+                        <h3 class="font-weight-bold text-white"><i class="bi bi-pencil-square me-2"></i>write</h3>
+                        <small class="text-white">날짜와 함께 일정을 등록할 수 있습니다.</small>
+                    </div>
+                </div>
+                <form action="/add" method="POST">
+                    <div class="mb-3">
+                        <label class="d-flex mb-2 text-white" for="title">할일</label>
+                        <input type="text" name="title" id="title" class="form-control rounded-pill bg-light bg-opacity-25 border-0 text-white px-3" required autofocus>
+                    </div>
+                    <div class="mb-4">
+                        <div class="mb-2 w-100 d-flex justify-content-between align-items-center">
+                            <label class="text-white" for="date">날짜</label>
+                        </div>
+                        <input type="date" name="date" id="date" class="form-control rounded-pill bg-light bg-opacity-25 border-0 text-white px-3" required>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button type="submit" class="btn btn-warning ms-auto">
+                            <i class="bi bi-pencil-square me-2"></i>write
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="position-absolute bottom-0 w-100 p-4 mt-5 text-center text-secondary fs-7">
+        Copyright &copy; 2023 to-do crud. All rights reserved.
+    </footer>
+</body>
+</html>
