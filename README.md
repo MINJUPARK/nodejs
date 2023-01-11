@@ -1,7 +1,6 @@
 # TO-DO CRUD
 일정을 서버와 연동하여 관리할 수 있는 페이지 입니다.<br />
 Node.js Express(HTTP Methods) + MongoDB를 사용해 웹 서버 구축 및 DB 연동을 진행하였습니다.
-
 <br /><br />
 
 > **제작기간**
