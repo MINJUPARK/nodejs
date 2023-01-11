@@ -71,6 +71,7 @@ MongoClient.connect('mongodb+srv://admin:minju0227@cluster0.hs7p749.mongodb.net/
         db.collection('post').deleteOne(req.body, function(error, result) {
             console.log('삭제완료');
         })
+        res.send('삭제완료');
     })
 
     app.get('/detail/:id', function(req, res) {

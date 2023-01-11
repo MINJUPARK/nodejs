@@ -36,6 +36,7 @@
                 const id = `/edit/${e.target.dataset.id}`;
                 location.href = id;
             })
+            
             $('.delete').click(function(e) {
                 if(confirm('해당 기록을 삭제하시겠습니까?')) {
                     $.ajax({
@@ -43,7 +44,7 @@
                     url: '/delete',
                     data: {_id : e.target.dataset.id}
                     }).done((result) => {
-                        $(this).parent('li').fadeOut();
+                        $(this).closest('.card').fadeOut();
                     }).fail(function(error) {
                     })
                 }
