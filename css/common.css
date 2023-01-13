@@ -2,6 +2,10 @@ body {
     height: 100vh;
 }
 
+.fs-7 {
+    font-size: 12px;
+}
+
 .mainbg {
     position: relative;
     height: 100vh;
@@ -28,6 +32,10 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.title-box p {
+    font-size: calc(0.8em + 1vw);
+}
+
 #custom-cards > * {
     letter-spacing: -0.02em;
 }
@@ -47,10 +55,6 @@ body {
 }
 .card-footer {
     background: #343a40 !important;
-}
-
-.fs-7 {
-    font-size: 12px;
 }
 
 input::-webkit-input-placeholder {
