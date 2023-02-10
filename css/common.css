@@ -35,18 +35,6 @@ input:-ms-input-placeholder {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* .title-box {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 80%;
-    transform: translate(-50%, -50%);
-}
-
-.title-box p {
-    font-size: calc(0.8em + 1vw);
-} */
-
 #custom-cards > * {
     letter-spacing: -0.02em;
 }
