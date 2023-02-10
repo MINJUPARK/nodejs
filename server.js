@@ -41,7 +41,7 @@ MongoClient.connect('mongodb+srv://admin:minju0227@cluster0.hs7p749.mongodb.net/
     });
 
     app.post('/add', function(req, res) {
-        res.send('전송완료'); 
+        res.redirect('/list');
         
         db.collection('counter').findOne({ name: '게시물갯수' }, function(error, result) {
             console.log(result.totalPost);
